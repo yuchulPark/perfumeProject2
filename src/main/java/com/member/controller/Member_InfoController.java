@@ -19,10 +19,10 @@ public class Member_InfoController {
 	private Member_InfoService member_infoService;
 	
 	// 회원가입
-	@GetMapping("/insertMemberJoin.do")
+	@GetMapping("/joinForm.do")
 	public void memberJoinForm() {
 	}
-	@PostMapping("/insertMemberJoin.do")
+	@PostMapping("/joinFormOK.do")
 	public ModelAndView memberJoinSubmit(Member_InfoVo mi) {
 		System.out.println("회원가입 컨트롤러 동작");
 		ModelAndView m = new ModelAndView();
