@@ -36,8 +36,8 @@ public class Board_PostServiceImpl implements Board_PostService {
 
 	// 게시글 조회수 증가
 	@Override
-	public int updateHit(int board_no) {
-		return board_postDao.updateHit(board_no);
+	public void updateHit(int board_no) {
+		board_postDao.updateHit(board_no);
 	}
 
 	// 게시글 수정

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="perfume_goods">
+	<!-- 향수 상품 추가 -->
+  <insert id="insert">
+  	insert into perfume_goods(perfume_no, perfume_brand, perfume_name, perfume_img, perfume_simple_note, 
+  	perfume_detail_note, perfume_simple_three_note, perfume_detail_three_note, perfume_kinds, perfume_year, 
+  	perfume_hit, perfume_review, perfume_topNote, perfume_middleNote, perfume_baseNote, perfume_score, perfume_voteCount, 
+  	perfume_favorite, perfume_continue, perfume_smell, perfume_gender, perfume_weather, perfume_dayTime, perfume_qty, perfume_price) 
+  		values(seq_perfume_no, #{perfume_brand}, #{perfume_name}, #{perfume_img}, #{perfume_simple_note}, 
+  		#{perfume_detail_note}, #{perfume_simple_three_note}, #{perfume_detail_three_note}, #{perfume_kinds}, #{perfume_year}, 
+  		0, #{perfume_review}, #{perfume_topNote}, #{perfume_middleNote}, #{perfume_baseNote}, #{perfume_score}, #{perfume_voteCount}, 
+  		#{perfume_favorite}, #{perfume_continue}, #{perfume_smell}, #{perfume_gender}, #{perfume_weather}, #{perfume_dayTime}, 0, #{perfume_price})
+  </insert>
+	
+	<!-- 향수 전체 리스트 (perfume_no로 정렬되어 있음. 전체 리스트 보기. 리스트는 브랜드명, 향수명, 사진만 보여줄 예정) -->
+  <select id="selectAll" resultType="perfume_goodsVo">
+    select * from perfume_goods order by perfume_no
+  </select>
+  
+  	<!-- 향수 브랜드별 리스트 (전체리스트에서 버튼 클릭시 해당 브랜드만 보여줌)-->
+  <select id="selectBrand" resultType="perfume_goodsVo">
+  	select * from perfume_goods where perfume_brand = #{perfume_brand}
+  </select>
+  
+  	<!-- 향수 상세보기 -->
+  <select id="selectBrand" resultType="perfume_goodsVo">
+  	select * from perfume_goods where perfume_no = #{perfume_no}
+  </select>
+  
+  	<!-- 클릭시 조회수 증가 -->
+  <update id="updateHit">
+  	update perfume_goods set perfume_hit = perfume_hit + 1 where perfume_no = ${perfume_no} 
+  </update>
+  
+  	<!-- 향수 상품 수정 (번호, 조회수, 수량은 안적음) -->
+  <update id="update">
+  	update perfume_goods 
+  		set perfume_brand = #{perfume_brand}, perfume_name = #{perfume_name}, perfume_img = #{perfume_img}, 
+  		perfume_simple_note = #{perfume_simple_note}, perfume_detail_note = #{perfume_detail_note}, 
+  		perfume_simple_three_note = #{perfume_simple_three_note}, perfume_detail_three_note = #{perfume_detail_three_note}, 
+  		perfume_kinds = #{perfume_kinds}, perfume_year = #{perfume_year}, perfume_review = #{perfume_review}, 
+  		perfume_topNote = #{perfume_topNote}, perfume_middleNote = #{perfume_middleNote}, perfume_baseNote = #{perfume_baseNote}, 
+  		perfume_score = #{perfume_score}, perfume_voteCount = #{perfume_voteCount}, perfume_favorite = #{perfume_favorite}, 
+  		perfume_continue = #{perfume_continue}, perfume_smell = #{perfume_smell}, perfume_gender = #{perfume_gender}, 
+  		perfume_weather = #{perfume_weather}, perfume_dayTime = #{perfume_dayTime}, perfume_price = #{perfume_price}
+  			where perfume_no = #{perfume_no}
+  </update>
+  
+  	<!-- 향수 상품 삭제 -->
+  <delete id="delete">
+  	delete from perfume_goods where perfume_no = #{perfume_no} 
+  </delete>
+  
+</mapper>

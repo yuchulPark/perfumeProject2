@@ -7,6 +7,7 @@
 	<typeAliases>
 		<typeAlias type="com.member.vo.Member_InfoVo" alias="member_infoVo"/>
 		<typeAlias type="com.member.vo.Board_PostVo" alias="board_postVo"/>
+		<typeAlias type="com.member.vo.Perfume_GoodsVo" alias="perfume_goodsVo"/>
 	</typeAliases>
   <environments default="development">
     <environment id="development">
@@ -22,5 +23,6 @@
   <mappers>
     <mapper resource="com/member/mapper/Member_InfoMapper.xml"/>
     <mapper resource="com/member/mapper/Board_PostMapper.xml"/>
+    <mapper resource="com/member/mapper/Perfume_GoodsMapper.xml"/>
   </mappers>
 </configuration>

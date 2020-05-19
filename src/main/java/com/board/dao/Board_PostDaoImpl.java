@@ -33,8 +33,8 @@ public class Board_PostDaoImpl implements Board_PostDao {
 
 	// 게시글 조회수 증가
 	@Override
-	public int updateHit(int board_no) {
-		return sqlSessionTemplate.update("board_post.updateHit", board_no);
+	public void updateHit(int board_no) {
+		sqlSessionTemplate.update("board_post.updateHit", board_no);
 	}
 
 	// 게시글 수정

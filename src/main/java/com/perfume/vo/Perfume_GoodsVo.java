@@ -12,8 +12,10 @@ public class Perfume_GoodsVo {
 	private String perfume_brand; // 브랜드명
 	private String perfume_name; // 향수명
 	private String perfume_img; // 향수 사진
-	private String perfume_simple_note; // 대략적인 노트
-	private String perfume_detail_note; // 세부 노트
+	private String perfume_simple_note; // 대략적인 노트 (전체)
+	private String perfume_detail_note; // 세부 노트 (전체)
+	private String perfume_simple_three_note; // 대략적인 노트 (3개)
+	private String perfume_detail_three_note; // 세부 노트 (3개)
 	private String perfume_kinds; // 향조
 	private String perfume_year; // 탄생년도
 	private int perfume_hit; // 조회수
@@ -22,7 +24,7 @@ public class Perfume_GoodsVo {
 	private String perfume_middleNote; // 미들 노트
 	private String perfume_baseNote; // 베이스 노트
 	private double perfume_score; // 점수
-	private int perfume_voteNumber; // 투표자수
+	private int perfume_voteCount; // 투표자수
 	private int perfume_favorite; // 시그니쳐
 	private String perfume_continue; // 지속력
 	private String perfume_smell; // 잔향
