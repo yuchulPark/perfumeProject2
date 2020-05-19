@@ -6,6 +6,7 @@
 	<properties resource="com/db/config/db.properties"/>
 	<typeAliases>
 		<typeAlias type="com.member.vo.Member_InfoVo" alias="member_infoVo"/>
+		<typeAlias type="com.member.vo.Board_PostVo" alias="board_postVo"/>
 	</typeAliases>
   <environments default="development">
     <environment id="development">
@@ -20,5 +21,6 @@
   </environments>
   <mappers>
     <mapper resource="com/member/mapper/Member_InfoMapper.xml"/>
+    <mapper resource="com/member/mapper/Board_PostMapper.xml"/>
   </mappers>
 </configuration>
