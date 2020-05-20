@@ -24,6 +24,7 @@ public class Perfume_GoodsServiceImpl implements Perfume_GoodsService {
 	// 향수 전체 리스트 (perfume_no로 정렬되어 있음. 전체 리스트 보기. 리스트는 브랜드명, 향수명, 사진만 보여줄 예정)
 	@Override
 	public List<Perfume_GoodsVo> listPerfume_Goods() {
+		System.out.println("1");
 		return perfume_goodsDao.listPerfume_Goods();
 	}
 

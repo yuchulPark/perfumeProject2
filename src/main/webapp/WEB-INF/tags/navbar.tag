@@ -14,13 +14,13 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Introduce</a></li>
-					<li><a href="#">Brand List</a></li>
-					<li><a href="#">Community</a></li>
+					<li><a href="/perfume/listPerfume_Goods.do">Perfume Shop</a></li>
+					<li><a href="/board/listBoard.do">Community</a></li>
 					<li><a href="#">Q & A</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/login.do"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					<li><a href="/insertMemberJoin.do"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+					<li><a href="/member/login.do"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="/member/joinForm.do"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
 				</ul>
 			</div>
 		</div>

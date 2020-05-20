@@ -14,6 +14,7 @@ import com.member.service.Member_InfoService;
 import com.member.vo.Member_InfoVo;
 
 @Controller
+@RequestMapping("/member/")
 public class Member_InfoController {
 	@Resource(name="member_infoService")
 	private Member_InfoService member_infoService;

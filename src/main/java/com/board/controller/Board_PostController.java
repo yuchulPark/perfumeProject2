@@ -12,6 +12,7 @@ import com.board.service.Board_PostService;
 import com.board.vo.Board_PostVo;
 
 @Controller
+@RequestMapping("/board/")
 public class Board_PostController {
 	@Resource(name="board_postService")
 	private Board_PostService board_postService;
@@ -33,12 +34,13 @@ public class Board_PostController {
 	
 	// 게시글 목록 (게시판 종류에 따라 나뉨)
 	@RequestMapping("/listBoard.do")
-	public ModelAndView listBoard() {
+	public ModelAndView listBoard(int board_kinds) {
 		// 게시글 조회수 증가
 		// board_postService.updateHit(board_no);
+		System.out.println("게시판 목록 컨트롤러 작동");
 		
 		ModelAndView m = new ModelAndView();
-		m.addObject("bp", board_postService.listBoard());
+		m.addObject("bp", board_postService.listBoard(board_kinds));
 		return m;
 	}
 	

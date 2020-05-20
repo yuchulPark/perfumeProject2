@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="perfume_goods">
 	<!-- 향수 상품 추가 -->
-  <insert id="insert">
+  <insert id="insertPerfume">
   	insert into perfume_goods(perfume_no, perfume_brand, perfume_name, perfume_img, perfume_simple_note, 
   	perfume_detail_note, perfume_simple_three_note, perfume_detail_three_note, perfume_kinds, perfume_year, 
   	perfume_hit, perfume_review, perfume_topNote, perfume_middleNote, perfume_baseNote, perfume_score, perfume_voteCount, 
@@ -16,27 +16,29 @@
   </insert>
 	
 	<!-- 향수 전체 리스트 (perfume_no로 정렬되어 있음. 전체 리스트 보기. 리스트는 브랜드명, 향수명, 사진만 보여줄 예정) -->
-  <select id="selectAll" resultType="perfume_goodsVo">
+  <select id="selectAllPerfume" resultType="com.perfume.vo.Perfume_GoodsVo">
     select * from perfume_goods order by perfume_no
   </select>
   
+  
+  
   	<!-- 향수 브랜드별 리스트 (전체리스트에서 버튼 클릭시 해당 브랜드만 보여줌)-->
-  <select id="selectBrand" resultType="perfume_goodsVo">
+  <select id="selectBrandPerfume" resultType="com.perfume.vo.Perfume_GoodsVo">
   	select * from perfume_goods where perfume_brand = #{perfume_brand}
   </select>
   
   	<!-- 향수 상세보기 -->
-  <select id="selectBrand" resultType="perfume_goodsVo">
+  <select id="detailPerfume" resultType="com.perfume.vo.Perfume_GoodsVo">
   	select * from perfume_goods where perfume_no = #{perfume_no}
   </select>
   
   	<!-- 클릭시 조회수 증가 -->
-  <update id="updateHit">
+  <update id="updateHitPerfume">
   	update perfume_goods set perfume_hit = perfume_hit + 1 where perfume_no = ${perfume_no} 
   </update>
   
   	<!-- 향수 상품 수정 (번호, 조회수, 수량은 안적음) -->
-  <update id="update">
+  <update id="updatePerfume">
   	update perfume_goods 
   		set perfume_brand = #{perfume_brand}, perfume_name = #{perfume_name}, perfume_img = #{perfume_img}, 
   		perfume_simple_note = #{perfume_simple_note}, perfume_detail_note = #{perfume_detail_note}, 
@@ -50,7 +52,7 @@
   </update>
   
   	<!-- 향수 상품 삭제 -->
-  <delete id="delete">
+  <delete id="deletePerfume">
   	delete from perfume_goods where perfume_no = #{perfume_no} 
   </delete>
   

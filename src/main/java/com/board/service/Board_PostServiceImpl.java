@@ -24,8 +24,8 @@ public class Board_PostServiceImpl implements Board_PostService {
 
 	// 게시글 목록 (게시판 종류에 따라 나뉨)
 	@Override
-	public List<Board_PostVo> listBoard() {
-		return board_postDao.listBoard();
+	public List<Board_PostVo> listBoard(int board_kinds) {
+		return board_postDao.listBoard(board_kinds);
 	}
 
 	// 게시글 상세 (게시판 종류에 따라 나뉨)

@@ -9,7 +9,7 @@ public interface Board_PostDao {
 	int insertBoard(Board_PostVo bp);
 	
 	// 게시글 목록 (게시판 종류에 따라 나뉨)
-	List<Board_PostVo> listBoard();
+	List<Board_PostVo> listBoard(int board_kinds);
 	
 	// 게시글 상세 (게시판 종류에 따라 나뉨)
 	Board_PostVo detailBoard(int board_no);

@@ -2,7 +2,9 @@ package com.perfume.controller;
 
 import javax.annotation.Resource;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +14,7 @@ import com.perfume.service.Perfume_GoodsService;
 import com.perfume.vo.Perfume_GoodsVo;
 
 @Controller
+@RequestMapping("/perfume/")
 public class Perfume_GoodsController {
 	@Resource(name="perfume_goodsService")
 	private Perfume_GoodsService perfume_goodsService;
@@ -20,6 +23,7 @@ public class Perfume_GoodsController {
 	@GetMapping("/insertPerfume_Goods.do")
 	public void insertPerfume_Goods() {
 	}
+	
 	@PostMapping("/insertPerfume_GoodsOK.do")
 	public ModelAndView insertPerfume_Goods(Perfume_GoodsVo pg) {
 		ModelAndView m = new ModelAndView();
@@ -28,11 +32,17 @@ public class Perfume_GoodsController {
 	}
 	
 	// 향수 전체 리스트 (perfume_no로 정렬되어 있음. 전체 리스트 보기. 리스트는 브랜드명, 향수명, 사진만 보여줄 예정)
+//	@RequestMapping("/listPerfume_Goods.do")
+//	public String listPerfume_Goods(Model m) {
+//		// 클릭시 조회수 증가
+//		// perfume_goodsService.updateHit(perfume_no);
+//		System.out.println("컨트롤러");
+//		m.addAttribute("ps", perfume_goodsService.listPerfume_Goods());
+//		return "listPerfume_Goods";
+//	}
+	// 향수 전체 리스트 (perfume_no로 정렬되어 있음. 전체 리스트 보기. 리스트는 브랜드명, 향수명, 사진만 보여줄 예정)
 	@RequestMapping("/listPerfume_Goods.do")
 	public ModelAndView listPerfume_Goods() {
-		// 클릭시 조회수 증가
-		// perfume_goodsService.updateHit(perfume_no);
-		
 		ModelAndView m = new ModelAndView();
 		m.addObject("pg", perfume_goodsService.listPerfume_Goods());
 		return m;

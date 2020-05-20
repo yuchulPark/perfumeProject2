@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>향수 상품 추가</title>
 </head>
 <body>
-	<h2>dd</h2>
+	<h2>향수 상품 추가</h2>
 </body>
 </html>
