@@ -29,6 +29,7 @@ public class Board_PostController {
 	public ModelAndView insertBoardSubmit(Board_PostVo bp) {
 		ModelAndView m = new ModelAndView();
 		int re = board_postService.insertBoard(bp);
+		//if(re )
 		return m;
 	}
 	

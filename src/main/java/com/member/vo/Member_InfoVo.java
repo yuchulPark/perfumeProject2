@@ -22,4 +22,5 @@ public class Member_InfoVo {
 	private String member_nickname; // 닉네임
 	private String member_introduce; // 자기소개
 	private String member_img; // 프로필 사진
+	private String member_addr; // 주소
 }
